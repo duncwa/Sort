@@ -12,7 +12,8 @@
 		D525CEA81C62D9A200580075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D525CEA61C62D9A200580075 /* LaunchScreen.storyboard */; };
 		D525CEB31C62D9A200580075 /* SortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525CEB21C62D9A200580075 /* SortTests.swift */; };
 		D525CEBE1C62D9A300580075 /* SortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525CEBD1C62D9A300580075 /* SortUITests.swift */; };
-		D525CECC1C62DD0800580075 /* Sorts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525CECB1C62DD0800580075 /* Sorts.swift */; };
+		D525CECC1C62DD0800580075 /* SortBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525CECB1C62DD0800580075 /* SortBrain.swift */; };
+		D52DB0C41DAF03FB00A51E6C /* SortData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52DB0C31DAF03FB00A51E6C /* SortData.swift */; };
 		D5C1C4EC1DA85FA8002CD880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D525CEA11C62D9A200580075 /* Main.storyboard */; };
 		D5C1C4ED1DA85FAC002CD880 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525CECF1C63022F00580075 /* ItemsTableViewController.swift */; };
 		D5C1C4EE1DA85FAF002CD880 /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D525CECD1C62FCC700580075 /* ItemViewCell.swift */; };
@@ -48,9 +49,10 @@
 		D525CEB91C62D9A200580075 /* SortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D525CEBD1C62D9A300580075 /* SortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortUITests.swift; sourceTree = "<group>"; };
 		D525CEBF1C62D9A300580075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D525CECB1C62DD0800580075 /* Sorts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sorts.swift; sourceTree = "<group>"; };
+		D525CECB1C62DD0800580075 /* SortBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortBrain.swift; sourceTree = "<group>"; };
 		D525CECD1C62FCC700580075 /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
 		D525CECF1C63022F00580075 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		D52DB0C31DAF03FB00A51E6C /* SortData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortData.swift; path = Model/SortData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,8 @@
 		D525CE9A1C62D9A200580075 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
+				D52DB0C21DAF03C600A51E6C /* Model */,
 				D525CE9B1C62D9A200580075 /* AppDelegate.swift */,
-				D525CECB1C62DD0800580075 /* Sorts.swift */,
 				D525CEA11C62D9A200580075 /* Main.storyboard */,
 				D525CECF1C63022F00580075 /* ItemsTableViewController.swift */,
 				D525CECD1C62FCC700580075 /* ItemViewCell.swift */,
@@ -129,6 +131,15 @@
 				D525CEBF1C62D9A300580075 /* Info.plist */,
 			);
 			path = SortUITests;
+			sourceTree = "<group>";
+		};
+		D52DB0C21DAF03C600A51E6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D525CECB1C62DD0800580075 /* SortBrain.swift */,
+				D52DB0C31DAF03FB00A51E6C /* SortData.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D525CECC1C62DD0800580075 /* Sorts.swift in Sources */,
+				D52DB0C41DAF03FB00A51E6C /* SortData.swift in Sources */,
+				D525CECC1C62DD0800580075 /* SortBrain.swift in Sources */,
 				D525CE9C1C62D9A200580075 /* AppDelegate.swift in Sources */,
 				D5C1C4ED1DA85FAC002CD880 /* ItemsTableViewController.swift in Sources */,
 				D5C1C4EE1DA85FAF002CD880 /* ItemViewCell.swift in Sources */,

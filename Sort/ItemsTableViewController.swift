@@ -11,43 +11,32 @@ import UIKit
 class ItemsTableViewController: UITableViewController {
 
   // MARK: Properties
-    
-  var sortedItems = Sorts()
-  var itemsArray = Array<String>()
+  
+  var sortedArray = [Int]()
+  var sortedItems = SortBrain()
   let itemCellIdentifier = "itemViewCell"
   
   override func viewDidLoad() {
-      super.viewDidLoad()
-      loadItems()
-      
+    super.viewDidLoad()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    loadItems()
   }
   
   // MARK: Sort Function Selection
   func loadItems() {
-    // Switch statement for sort selection
     let index = self.tabBarItem.title!
-    switch index {
-    case "Insertion":
-      itemsArray = sortedItems.insertionSorter()
-    case "Merge":
-      itemsArray = sortedItems.mergeSorter()
-    case "Selection":
-      itemsArray = sortedItems.selectionSorter()
-    case "Bubble":
-      itemsArray = sortedItems.bubbleSorter()
-    case "Quick":
-      itemsArray = sortedItems.quickSorter()
-    default:
-      break;
-    }
-    
-    
-    for value in itemsArray {
+    self.sortedArray = self.sortedItems.theSorter(index)
+    /* for value in itemsArray {
         
         //sortTable = items
         print("The sorted array item is: \(value).")
     }
     print("The sorted array is: \(itemsArray).")
+    */
+    
     self.tableView.reloadData()
   }
 
@@ -64,7 +53,7 @@ class ItemsTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection
       section: Int) -> Int {
-    return itemsArray.count
+    return self.sortedArray.count
   }
 
     
@@ -75,7 +64,7 @@ class ItemsTableViewController: UITableViewController {
   func itemCellAtIndexPath(_ indexPath:IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier) as! ItemViewCell
     
-    if let result_item = self.itemsArray[indexPath.row] as String?
+    if let result_item = self.sortedArray[indexPath.row] as Int?
     {
       cell.itemLabel.text = "\(result_item)"
     }
