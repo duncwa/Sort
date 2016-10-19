@@ -81,7 +81,6 @@ class SortBrain {
     var array = items
     var swapped = true
     var arrayPosition: Int = 0
-    //while arrayPosition < array.count {
 
     repeat {
       print("Untouched Bubble sort array is \(array) \n \n \n")
@@ -109,10 +108,86 @@ class SortBrain {
   
   func mergeSort(_ items: [Int]) -> [Int] {
     //Merge Sort
-    var array = items
-    array = [0]
+    var arrayA = items
+    var arrayB = Array(repeating: 0, count: arrayA.count)
+    print("Untouched Merge sort array is \(arrayA) \n \n \n")
 
-    return array
+    func sort(_ low: Int, high: Int) {
+      var mid: Int
+      if (low < high) {
+        mid = (low + high) / 2
+        print("Inside recursive sort function mid =  \(mid) and low = \(low)")
+        sort(low, high: mid)
+        print("Called sort ONCE recursively")
+        sort(mid + 1, high: high)
+        print("Called sort TWICE recursively")
+
+        merging(low, mid: mid, high: high)
+        print("Called merging once recursively")
+
+
+      } else {
+        return
+      }
+      print("Inside sort function mid =  \(mid) and low = \(low)")
+      print("Inside sort function arrayB is \(arrayB) \n")
+      print("Inside sort function arrayA is \(arrayA) \n \n \n")
+
+    }
+    
+    func merging(_ low: Int, mid: Int, high: Int) {
+      var l1: Int
+      var l2: Int
+      var i: Int
+      l1 = low
+      l2 = mid + 1
+      i = low
+      
+      while (l1 <= mid && l2 <= high) {
+        print("INSIDE outer while statement in merging.")
+        
+        if arrayA[l1] <= arrayA[l2] {
+          print("INSIDE if statement in merging.")
+          arrayB[i] = arrayA[l1]
+          l1 += 1
+
+        } else {
+          print("INSIDE else statement in merging.")
+          arrayB[i] = arrayA[l2]
+          l2 += 1
+
+        }
+        
+        while l1 <= mid {
+          print("INSIDE first inner while statement in merging.")
+          arrayB[i]  = arrayA[l1]
+          i += 1
+          l1 += 1
+        }
+        
+        while l2 <= high {
+          print("INSIDE second inner while statement in merging.")
+          arrayB[i]  = arrayA[l2]
+          i += 1
+          l2 += 1
+        }
+        
+        for iterate in i...high {
+          arrayA[iterate] = arrayB[iterate]
+          print("INSIDE for statement in merging.")
+
+        }
+        
+      }
+      print("Inside merging function mid =  \(mid) and low = \(low)")
+      print("Inside merging function arrayB is \(arrayB) \n")
+      print("Inside merging function arrayA is \(arrayA) \n \n \n")
+
+    }
+    
+    sort(0, high: arrayA.count - 1)
+    print("FINISHED sort function arrayA is \(arrayA) \n \n \n")
+    return arrayA
   }
   
   func quickSort(_ items: [Int]) -> [Int] {
